@@ -3,12 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>자기소개 페이지</title>
+    <style>
+        #container {
+            width: 1300px;
+            margin: 20px auto;
+        }
+        #box1 {
+            width: 20%;
+            height: 900px;
+            background-color: rgb(190, 245, 255);
+            float: left;
+            box-sizing: border-box;
+            padding: 40px;
+        }
+        #box2 {
+            width: 80%;
+            height: 900px;
+            background-color: rgb(238, 236, 236);
+            box-sizing: border-box;
+            padding-left: 330px;
+        }
+        #date {
+            font-size: medium;
+            font-style: italic;
+            text-align: center;
+            margin: 20px;
+            border: 1px solid rgb(209, 204, 204);
+        }
+        .titlefont {
+            font-size: x-large;
+            font-weight: bold;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            background-color: rgb(101, 169, 201);
+            display: block;
+            border-radius: 10px;
+        }
+        .box1-intext {
+            margin: 20px auto;
+        }
+        table,tr,th {
+            border: 1px solid rgb(204, 202, 202);
+            border-collapse: collapse;
+            padding: 5px 20px;
+            font-size: small;
+            text-align: center;
+        }
+        td {
+            border: 1px solid rgb(204, 202, 202);
+            border-collapse: collapse;
+            padding-left: 5px;
+            padding-right: 10px;
+        }
+        
+    </style>
 </head>
 <body>
-    자기소개 페이지 2025.08.21
-    <div>
-        <button>버튼</button>
+    <div id="container">
+        <div id="box1">
+            <img src="/media/photo_1.jfif" width="180px" height="180px" style="border-radius: 50%;">
+            <div class="titlefont">
+                kim seongmin
+            </div>
+            <div class="box1-intext">
+                풀스택 과정 공부중
+            </div>
+            <div class="box1-intext">
+                Bucheon, Korea
+            </div>
+            <div class="box1-intext">
+                study@naver.com
+            </div>
+            <div class="titlefont">
+                SNS
+            </div>
+            <div class="box1-intext">
+                <a href="https://www.naver.com">
+                    클릭!
+                </a>
+            </div>
+            <div class="titlefont">
+                현재 시간
+            </div>
+            <div id="date"></div>
+        </div>
+        <div id="box2">
+            <div class="titlefont">
+                자기소개
+            </div>
+            <div>
+                저는 <span style="background-color: yellow; color: red; font-weight: bold;">프로그래밍</span>에 관심이 많습니다
+            </div>
+            <div>
+                현재 열심히 공부하며 코딩 중!
+            </div>
+            <div class="titlefont">
+                Experience
+            </div>
+            <ul>
+                <li>프론트엔드</li>
+                <ul>
+                    <li>HTML/CSS</li>
+                </ul>
+                <li>백엔드</li>
+                <ul>
+                    <li>자바</li>
+                    <li>오라클</li>
+                </ul>
+            </ul>
+            <div class="titlefont">
+                보유 기술
+            </div>
+            <ul>
+                <li>자바</li>
+                <li>오라클</li>
+            </ul>
+            <div class="titlefont">
+                Education
+            </div>
+            <table>
+                <caption style="font-weight: bold; color: red;">학력 사항</caption>
+                <tr>
+                    <th>출신학교</th>
+                    <th>전공</th>
+                    <th>기간</th>
+                    <th>구분</th>
+                </tr>
+                <tr>
+                    <td>좋은대학교</td>
+                    <td>좋은학과</td>
+                    <td>2017~2020</td>
+                    <td>졸업</td>
+                </tr>
+                <tr>
+                    <td>좋은고등학교</td>
+                    <td>-</td>
+                    <td>2014~2017</td>
+                    <td>졸업</td>
+                </tr>
+            </table>
+        </div>
+        
     </div>
 </body>
 </html>
+<script>
+    setInterval(()=>{
+        let dt = new Date();
+        let time = document.querySelector("#date");
+        time.innerHTML = dt.getFullYear() 
+        + " - " + dt.getMonth() 
+        + " - " + dt.getDay()
+        + " <hr> " + dt.getHours() + " : "
+        + dt.getMinutes() + " : "
+        + dt.getSeconds();
+    }, 1000);
+</script>
