@@ -1,164 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자기소개 페이지</title>
     <style>
         #container {
-            width: 1300px;
-            margin: 20px auto;
+            width: 1000px;
+            height: auto;
+            margin: 10px auto;
         }
-        #box1 {
-            width: 20%;
+
+        body {
+            margin: 0;
+            background: #f8f9fa;
+            color: #333;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 260px;
             height: 900px;
-            background-color: rgb(190, 245, 255);
-            float: left;
-            box-sizing: border-box;
-            padding: 40px;
+            background: #4A90E2;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
         }
-        #box2 {
-            width: 80%;
-            height: 900px;
-            background-color: rgb(238, 236, 236);
-            box-sizing: border-box;
-            padding-left: 330px;
+
+        .sidebar img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            margin: 15px auto;
+
         }
-        #date {
-            font-size: medium;
-            font-style: italic;
+
+        .sidebar h2 {
+            margin: 0px auto;
+        }
+
+        .sidebar h3 {
             text-align: center;
-            margin: 20px;
-            border: 1px solid rgb(209, 204, 204);
-        }
-        .titlefont {
             font-size: x-large;
-            font-weight: bold;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            background-color: rgb(101, 169, 201);
-            display: block;
-            border-radius: 10px;
         }
-        .box1-intext {
+
+        .sidebar p {
+            font-size: 0.9rem;
             margin: 20px auto;
         }
-        table,tr,th {
-            border: 1px solid rgb(204, 202, 202);
-            border-collapse: collapse;
-            padding: 5px 20px;
-            font-size: small;
+
+        #datetime {
+            font-size: x-large;
             text-align: center;
         }
-        td {
-            border: 1px solid rgb(204, 202, 202);
-            border-collapse: collapse;
-            padding-left: 5px;
-            padding-right: 10px;
+
+        .menu a {
+            width: 100%;
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin: 5px 0;
+            font-size: 1rem;
         }
-        
+
+        .menu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+
+        .main {
+            margin-left: 360px;
+            padding: 30px;
+            flex: 1;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            border-left: 5px solid #4A90E2;
+            padding-left: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        ul li::before {
+            position: absolute;
+            left: -15px;
+            color: #4A90E2;
+        }
+
+        .progress-bar {
+            background: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 20px;
+            margin: 10px 0;
+        }
+
+        .progress {
+            background: #4A90E2;
+            height: 100%;
+            text-align: center;
+            color: white;
+            font-size: 0.8rem;
+        }
     </style>
 </head>
+
 <body>
-    <div id="container">
-        <div id="box1">
-            <img src="/media/photo_1.jfif" width="180px" height="180px" style="border-radius: 50%;">
-            <div class="titlefont">
-                kim seongmin
+    <div class="container">
+        <div class="sidebar">
+            <img src="/media/starrail.jpg" alt="프로필 사진">
+            <h2>hong gil dong</h2>
+            <p>끈기와 열정을 가진 개발자 지망생</p>
+            <div class="menu">
+                <a href="#intro">소개</a>
+                <a href="#strength">나의 강점</a>
+                <a href="#interest">관심 분야</a>
+                <a href="#hobby">취미</a>
+                <a href="#goals">목표</a>
+                <a href="#language">관심 언어</a>
+                <a href="#study">공부 진도</a>
+                <a href="#contact">연락처</a>
             </div>
-            <div class="box1-intext">
-                풀스택 과정 공부중
-            </div>
-            <div class="box1-intext">
-                Bucheon, Korea
-            </div>
-            <div class="box1-intext">
-                study@naver.com
-            </div>
-            <div class="titlefont">
-                SNS
-            </div>
-            <div class="box1-intext">
-                <a href="https://www.naver.com">
-                    클릭!
-                </a>
-            </div>
-            <div class="titlefont">
-                현재 시간
-            </div>
-            <div id="date"></div>
+            <h3>현재 시간</h3>
+            <div id="datetime"></div>
         </div>
-        <div id="box2">
-            <div class="titlefont">
-                자기소개
+
+        <div class="main">
+            <div class="card" id="intro">
+                <h3>소개</h3>
+                <p>
+                    안녕하세요! 저는 새로운 기술을 배우는 것을 좋아하고, 꾸준히 성장하는 것을 목표로 하고 있습니다.
+                    웹 개발을 중심으로 다양한 프로젝트에 도전하고 있습니다.
+                </p>
             </div>
-            <div>
-                저는 <span style="background-color: yellow; color: red; font-weight: bold;">프로그래밍</span>에 관심이 많습니다
-            </div>
-            <div>
-                현재 열심히 공부하며 코딩 중!
-            </div>
-            <div class="titlefont">
-                Experience
-            </div>
-            <ul>
-                <li>프론트엔드</li>
+
+            <div class="card" id="strength">
+                <h3> 나의 강점</h3>
                 <ul>
-                    <li>HTML/CSS</li>
+                    <li>꾸준히 학습하는 습관</li>
+                    <li>팀워크와 소통 능력</li>
+                    <li>문제 해결 중심 사고</li>
                 </ul>
-                <li>백엔드</li>
+            </div>
+
+            <div class="card" id="interest">
+                <h3>관심 분야</h3>
+                <p>웹 개발, 데이터 베이스 관리, 게임 개발</p>
+            </div>
+
+            <div class="card" id="hobby">
+                <h3>취미</h3>
+                <p>게임, 독서, 여행</p>
+            </div>
+
+            <div class="card" id="goals">
+                <h3>목표</h3>
+                <p>
+                    단기적으로는 웹 개발자로 취업하여 실무 경험을 쌓는 것이 목표입니다.
+                    장기적으로는 데이터 기반 서비스와 풀스택 개발에 참여하고 싶습니다.
+                </p>
+            </div>
+
+            <div class="card" id="language">
+                <h3>관심 언어</h3>
                 <ul>
-                    <li>자바</li>
-                    <li>오라클</li>
+                    <li>java</li>
+                    <li>oracle</li>
+                    <li>HTML/CSS/javascript</li>
                 </ul>
-            </ul>
-            <div class="titlefont">
-                보유 기술
             </div>
-            <ul>
-                <li>자바</li>
-                <li>오라클</li>
-            </ul>
-            <div class="titlefont">
-                Education
+
+            <div class="card" id="study">
+                <h3>공부 진도</h3>
+                <p>HTML/CSS/javascript</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;">60%</div>
+                </div>
+                <p>oracle</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">70%</div>
+                </div>
+                <p>java</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;">70%</div>
+                </div>
             </div>
-            <table>
-                <caption style="font-weight: bold; color: red;">학력 사항</caption>
-                <tr>
-                    <th>출신학교</th>
-                    <th>전공</th>
-                    <th>기간</th>
-                    <th>구분</th>
-                </tr>
-                <tr>
-                    <td>좋은대학교</td>
-                    <td>좋은학과</td>
-                    <td>2017~2020</td>
-                    <td>졸업</td>
-                </tr>
-                <tr>
-                    <td>좋은고등학교</td>
-                    <td>-</td>
-                    <td>2014~2017</td>
-                    <td>졸업</td>
-                </tr>
-            </table>
+
+            <div class="card" id="contact">
+                <h3>연락처</h3>
+                <p>이메일: example@email.com</p>
+                <p><a href="https://github.com/username">GitHub</a></p>
+                <p><a href="https://www.naver.com">naver</a></p>
+            </div>
         </div>
-        
     </div>
 </body>
+
 </html>
 <script>
     setInterval(()=>{
         let dt = new Date();
-        let time = document.querySelector("#date");
+        let time = document.querySelector("#datetime");
         time.innerHTML = dt.getFullYear() 
-        + " - " + dt.getMonth() 
-        + " - " + dt.getDay()
-        + " <hr> " + dt.getHours() + " : "
-        + dt.getMinutes() + " : "
-        + dt.getSeconds();
+        + "년  " + dt.getMonth()
+        + "월  " + dt.getDay()
+        + "일 <br> " + dt.getHours() + "시  "
+        + dt.getMinutes() + "분  "
+        + dt.getSeconds() + "초";
     }, 1000);
-
 </script>
-
